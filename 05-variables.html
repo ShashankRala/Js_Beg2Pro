@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Cart Quantity</h3>
+    <button onclick="console.log('Cart Quantity : ' + variable1)";>Show Quantity</button>
+    <button onclick="variable1=variable1+1;console.log('Cart Quantity : ' + variable1)";>Add to Cart</button>
+    <button onclick="variable1=variable1+2;console.log('Cart Quantity : ' + variable1)">+2</button>
+    <button onclick="variable1=variable1+3;console.log('Cart Quantity : ' + variable1)">+3</button>
+    <button onclick="variable1=0;console.log('Cart was reset');console.log('Cart Quantity : ' + variable1);">Reset Cart</button> 
+    <script>
+        let variable1=0;
+    </script>
+</body>
+</html>
