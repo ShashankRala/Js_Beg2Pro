@@ -8,7 +8,9 @@
 <body>
     <script>
         const product={
-            name : 'socks',price:1090
+            name : 'socks',
+            price:1090,
+            stock:90
         };
         console.log(product);
         console.log(typeof product);
@@ -18,6 +20,30 @@
         console.log(product);
         delete product.price;
         console.log(product);
+
+            const jsonString= JSON.stringify(product);
+
+            console.log(jsonString);
+            
+        console.log(JSON.parse(jsonString));
+
+        console.log('shashank'.length);
+        console.log('shashank'.toUpperCase());
+        console.log('SHASHANK'.toLowerCase());
+
+        const obj1 ={
+            message:'hello'
+        };
+
+        const obj2 = obj1;
+
+        const obj3 ={
+            message :'hello'
+        };
+        console.log(obj3 === obj1);//it checks the reference , not the value
+
+        console.log(obj1 === obj2);//copy of the reference not the value
+
     </script>
 </body>
 </html>
