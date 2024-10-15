@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hello</button>
+    <button class="js-button">bye</button>
+    <script>
+        // document.body.innerHTML = 'hello';
+        // document.title='Shashank-DOM';
+        //  console.log(document.body);
+        //  console.log(typeof document.body);
+        //  console.log(document.body.innerHTML);
+        //  document.body.innerHTML = 'Shashank';
+        //  document.body.innerHTML = '<button>bye</button>';
+
+        console.log(document.querySelector('body'));
+        console.log(document.querySelector('button'));
+        console.log(document.querySelector('button')
+          .innerHTML);
+         document.querySelector('button')
+          .innerHTML = 'Shashank';
+         console.log(document.querySelector('button'));
+         console.log(document.querySelector('button')
+          .innerHTML);
+
+        //   console.log(document.querySelector('.js-button'));
+          const buttonElement = document.querySelector('.js-button');
+          console.log(buttonElement);
+
+         
+    </script>
+</body>
+</html>     

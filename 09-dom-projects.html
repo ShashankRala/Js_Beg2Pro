@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <!--  <button onclick="
+    // console.log(document.querySelector('button').innerHTMl='Subscribed');
+    document.body.querySelector('button')
+    .innerHTMl='Subscribed';
+    ">Subscribe</button> -->
+
+    <button
+      class="Youtube"
+      onclick="
+    // if(document.querySelector('.Youtube').innerHTML === 'Subscribe')
+    // {
+    // const bu = document.body.querySelector('.Youtube')
+    //     .innerHTML = 'Subscribed';
+    // }
+    // else if(document.querySelector('.Youtube').innerHTML === 'Subscribed')
+    // {
+    //     const bu = document.body.querySelector('.Youtube')
+    //     .innerHTML = 'Subscribe';
+    // }
+    subscribe();
+    ">
+    Subscribe
+    </button>
+    <!--  if inside the tags the string contains spaces 
+    front or at last to avoid those and only focus
+    on text we can use .innerText property -->
+    <script>
+      //    const bu = document.body.querySelector('.Youtube').innerHTML = 'Subscribed';
+      //    console.log(bu);
+      function subscribe() {
+        if (document.querySelector(".Youtube").innerText === "Subscribe") {
+          const bu = (document.body.querySelector(".Youtube").innerHTML =
+            "Subscribed");
+        } else if (
+          document.querySelector(".Youtube").innerText === "Subscribed"
+        ) {
+          const bu = (document.body.querySelector(".Youtube").innerHTML =
+            "Subscribe");
+        }
+      }
+    </script>
+  </body>
+</html>
