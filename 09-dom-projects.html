@@ -33,6 +33,16 @@
     <!--  if inside the tags the string contains spaces 
     front or at last to avoid those and only focus
     on text we can use .innerText property -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40=+$10 shipping charges</p>
+    <p>Order over $40 = Free shipping</p>
+    <input placeholder="Cost of Order" 
+    class="js-cost-input">
+    <button onclick="
+    calculate();
+    ">Calculate</button>
+    <p class="shipping"></p>
+    
     <script>
       //    const bu = document.body.querySelector('.Youtube').innerHTML = 'Subscribed';
       //    console.log(bu);
@@ -47,6 +57,28 @@
             "Subscribe");
         }
       }
+
+      function calculate()
+      {
+       const inputElement= document.querySelector(".js-cost-input");
+       let value=inputElement.value;
+       const valueint=parseInt(value);
+       let shipping=0;
+       if(40>value)
+       {
+        shipping = valueint + 10;
+       }
+       else if(40 <= value)
+       {
+        shipping = value;
+       }
+        // console.log(shipping);
+      //  let displaycosttotal =
+        document.querySelector(".shipping").innerText=`$${shipping}`;
+      //  displaycosttotal=`$${shipping}`;
+       
+      }
+
     </script>
   </body>
 </html>
