@@ -37,13 +37,27 @@
     <p>Order under $40=+$10 shipping charges</p>
     <p>Order over $40 = Free shipping</p>
     <input placeholder="Cost of Order" 
-    class="js-cost-input">
+    class="js-cost-input"
+    onkeydown="handleCostKeydown(event);">
+    
     <button onclick="
     calculate();
     ">Calculate</button>
     <p class="shipping"></p>
     
     <script>
+      String(24)
+      console.log('34'-4);
+      // the above line of code is a example for type coercion
+      console.log('25'+5);
+      // but above line of code functions as concatenation due to '+''
+
+      // built in object window ,in js [window] object is automatically adds in front of document,alert,console.log()
+      // window.document
+      window.alert('i am coder');
+      window.console.log('window')
+
+
       //    const bu = document.body.querySelector('.Youtube').innerHTML = 'Subscribed';
       //    console.log(bu);
       function subscribe() {
@@ -62,7 +76,8 @@
       {
        const inputElement= document.querySelector(".js-cost-input");
        let value=inputElement.value;
-       const valueint=parseInt(value);
+      //  const valueint=parseInt(value); even this works
+          const valueint=Number(value);
        let shipping=0;
        if(40>value)
        {
@@ -76,7 +91,13 @@
       //  let displaycosttotal =
         document.querySelector(".shipping").innerText=`$${shipping}`;
       //  displaycosttotal=`$${shipping}`;
-       
+
+      }
+
+      function handleCostKeydown(event){
+      if (event.key === 'Enter'){
+        calculate();
+        }
       }
 
     </script>
