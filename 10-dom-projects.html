@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+    <style> 
+     body{
+            font-family: Arial;
+        }
+        .subscribe-button{
+             border:none;
+             background-color: black;
+             color : white;
+             padding-top :10px;   
+             padding-bottom: 10px;  
+             padding-left: 15px;
+             padding-right: 15px;
+             border-radius: 50px;
+             font-weight: bold;
+             cursor: pointer;
+             margin-bottom: 30px;
+        }
+        /* when below class is created(when subscribed button is 
+        clicked is-subscribed class is created after creating before (subscribe-button will get override by is-subscribed)  */
+        .is-subscribed{
+            background-color: rgb(240,240,240);
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+
+        .js-cost-input{
+            font-size: 15px;
+            /* space inside element is padding */
+            /* padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px; these four lines same as padding:10px */
+            padding: 10px;
+        }
+
+        .calculate-button{
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;/*first number indicates vertical paddinf,second number indicates horizontal padding  */
+            cursor: pointer;
+        }
+      
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <!--  <button onclick="
+    // console.log(document.querySelector('button').innerHTMl='Subscribed');
+    document.body.querySelector('button')
+    .innerHTMl='Subscribed';
+    ">Subscribe</button> -->
+
+    <button
+      class="Youtube subscribe-button"
+      onclick="
+    // if(document.querySelector('.Youtube').innerHTML === 'Subscribe')
+    // {
+    // const bu = document.body.querySelector('.Youtube')
+    //     .innerHTML = 'Subscribed';
+    // }
+    // else if(document.querySelector('.Youtube').innerHTML === 'Subscribed')
+    // {
+    //     const bu = document.body.querySelector('.Youtube')
+    //     .innerHTML = 'Subscribe';
+    // }
+    subscribe();
+    ">
+    Subscribe
+    </button>
+    <!--  if inside the tags the string contains spaces 
+    front or at last to avoid those and only focus
+    on text we can use .innerText property -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40=+$10 shipping charges</p>
+    <p>Order over $40 = Free shipping</p>
+    <input placeholder="Cost of Order" 
+    class="js-cost-input"
+    onkeydown="handleCostKeydown(event);">
     
-</body>
+    <button 
+    onclick="calculate();"
+     class = "calculate-button"
+    >Calculate</button>
+    <p class="shipping"></p>
+    
+    <script>
+     
+
+
+      //    const bu = document.body.querySelector('.Youtube').innerHTML = 'Subscribed';
+      //    console.log(bu);
+      function subscribe() {
+        if (document.querySelector(".Youtube").innerText === "Subscribe") {
+          const bu = (document.body.querySelector(".Youtube").innerHTML =
+            "Subscribed");
+            document.querySelector(".Youtube").classList.add('is-subscribed')
+        } else if (
+          document.querySelector(".Youtube").innerText === "Subscribed"
+        ) {
+          const bu = (document.body.querySelector(".Youtube").innerHTML =
+            "Subscribe");
+            document.querySelector(".Youtube").classList.remove('is-subscribed')
+        }
+      }
+
+      function calculate()
+      {
+       const inputElement= document.querySelector(".js-cost-input");
+       let value=inputElement.value;
+      //  const valueint=parseInt(value); even this works
+          const valueint=Number(value);
+       let shipping=0;
+       if(40>value)
+       {
+        shipping = valueint + 10;
+       }
+       else if(40 <= value)
+       {
+        shipping = value;
+       }
+        // console.log(shipping);
+      //  let displaycosttotal =
+        document.querySelector(".shipping").innerText=`$${shipping}`;
+      //  displaycosttotal=`$${shipping}`;
+
+      }
+
+      function handleCostKeydown(event){
+      if (event.key === 'Enter'){
+        calculate();
+        }
+      }
+
+    </script>
+  </body>
 </html>
