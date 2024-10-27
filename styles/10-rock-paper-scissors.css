@@ -12,7 +12,7 @@ body{
   }
   .move-button{
     background-color: transparent;
-    border: 4px solid white;/*solid dotted dashed*/
+    border: 4px dotted white;/*solid dotted dashed*/
     border-radius: 60px;
     width: 120px;
     height: 120px;
