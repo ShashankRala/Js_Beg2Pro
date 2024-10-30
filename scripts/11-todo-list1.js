@@ -1,10 +1,12 @@
-const todoList=[{
-  name :'make dinner',
-  dueDate :'2022-12-22'
+const todoList=[
+  {
+  name:'make dinner',
+  dueDate:'2024-12-22'
 },{
-  name:'Make Cake',
-  dueDate:'2022-12-23'
-}];
+    name:'fill water',
+    dueDate:'2024-12-21',
+  }
+];
 
 renderTodoList();
 
@@ -14,24 +16,28 @@ function renderTodoList(){
 
   for(let i=0;i< todoList.length;i++)
   {
-    const todoObject = todoList[i];
-    // const name = todoObject.name;// same as below which is called destructing
-    const {name,dueDate} = todoObject;
-    //const dueDate=todoObject.dueDate; //same as below which is called destructing
-   // const dueDate=todoObject.dueDate;
-    const html =
-     `<p>
-     ${todo} 
-     <button onclick="
-     todoList.splice(${i},1);
-    renderTodoList();
-
-     ">Delete</button>
-     </p>`;//thi is called Generating the HTML 
+    const todoObject= todoList[i];
+    // const name = todoObject.name;
+    // const dueDate = todoObject.dueDate;  by destructuring we wrote in below code
+   
+    // const {name}=todoObject.name;
+    // const {dueDate}=todoObject.dueDate; //in more simple form
+    const {name,dueDate}=todoObject;
+// separe into 3 elements
+   
+    const html = `
+   <div> ${name}</div>  
+   <div>${dueDate}</div>
+  <button onclick="
+  todoList.splice(${i},1);
+  renderTodoList();
+  ">Delete</button>
+    `;
+    //thi is called Generating the HTML 
     todoListHTML += html;
   }
 
-  console.log(todoListHTML);
+  // console.log(todoListHTML);
 
   document.querySelector('.js-todo-list').innerHTML=todoListHTML;
 
@@ -43,16 +49,18 @@ function addTodo() {
   const name = inputElement.value;
 
   const dateInputElement = document.querySelector('.js-due-date-input');
-  const dueDate = dateInputElement.value;
-//   console.log(name);
-  todoList.push({
-    // name: name,
-    // dueDate:dueDate //if property and value name is same we use Shorthand Property
-    name ,
-    dueDate
 
-  });
-  console.log(todoList);
+  const dueDate =dateInputElement.value;
+
+//   console.log(name);
+  todoList.push(
+    {
+    //   name:name,
+    //   dueDate: dueDate
+    name,dueDate
+  }
+  );
+  // console.log(todoList);
   inputElement.value='';//this makes textbox empty after adding
 
   renderTodoList();
