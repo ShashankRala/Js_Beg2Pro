@@ -4,7 +4,7 @@ const todoList=[
   dueDate:'2024-12-22'
 },{
     name:'fill water',
-    dueDate:'2024-12-21',
+    dueDate:'2024-12-21'
   }
 ];
 
@@ -28,9 +28,11 @@ function renderTodoList(){
     const html = `
    <div> ${name}</div>  
    <div>${dueDate}</div>
-  <button onclick="
+  <button
+   onclick="
   todoList.splice(${i},1);
   renderTodoList();
+  "class ="delete-todo-button
   ">Delete</button>
     `;
     //thi is called Generating the HTML 
