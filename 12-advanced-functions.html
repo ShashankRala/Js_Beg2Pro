@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <script>
+        function greetings(){
+            console.log("hello");
+        }
+        greetings();// hello   
+
+        const function1=function hello(){
+            console.log('hello');
+        }
+        console.log(function1);// prints what is written in this function
+        console.log(typeof function1) //function
+        function1();
+
+
+        //Anonymous Function
+        const call=function(){
+
+            console.log('calling');
+        }
+
+        call();
+
+        //save a value into a function
+        const object1={
+            name:'shashank',
+            fun: function  greeting(){
+                console.log('hello4  ');
+            }
+        }
+        object1.fun();
+
+        function helloo(param){
+            console.log(param);
+        }
+        helloo('hijs');//if it is a string put them in a quotes,for a number not required
+
+
+        function run(param){
+            param();
+
+        }
+        run(function() {
+            console.log("i am inside a function");
+        });
+
+        setTimeout(function hello(){
+            console.log("start")
+        },3000);
+        
+            console.log("he")
+        
+
+
+console.log("hello123")
+        </script>
+      
+      
+</body>
+</html>
