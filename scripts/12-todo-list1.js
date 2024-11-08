@@ -13,8 +13,34 @@ renderTodoList();
 
 function renderTodoList(){
   let todoListHTML = '';
+
 // below code will be switch to .forEach
-  for(let i=0;i< todoList.length;i++)
+todoList.forEach(function(todoObject,index){
+  // const todoObject= todoList[i];
+  // const name = todoObject.name;
+  // const dueDate = todoObject.dueDate;  by destructuring we wrote in below code
+ 
+  // const {name}=todoObject.name;
+  // const {dueDate}=todoObject.dueDate; //in more simple form
+  const {name,dueDate}=todoObject;
+// separe into 3 elements
+ 
+  const html = `
+ <div> ${name}</div>  
+ <div>${dueDate}</div>
+<button
+ onclick="
+todoList.splice(${index},1);
+renderTodoList();
+"class ="delete-todo-button
+">Delete</button>
+  `;
+  //thi is called Generating the HTML 
+  todoListHTML += html;
+});
+
+//for loop
+ /* for(let i=0;i< todoList.length;i++)
   {
     const todoObject= todoList[i];
     // const name = todoObject.name;
@@ -37,7 +63,7 @@ function renderTodoList(){
     `;
     //thi is called Generating the HTML 
     todoListHTML += html;
-  }
+  }*/
 
   // console.log(todoListHTML);
 

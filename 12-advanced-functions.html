@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        /*
         function greetings(){
             console.log("hello");
         }
@@ -70,6 +71,21 @@ function dis(){
             console.log("two");
         }
         setInterval(log,1000);
+            */
+           [
+            'make dinner',
+            'wash dishes',
+            'watch Youtube'
+           ].forEach(function(value,index){
+            /*Passing a function into another function*/
+            // console.log(value,index)
+            if(value === 'wash dishes'){
+                return;
+            }
+            console.log(index)
+            console.log(value)
+           
+           });
         </script>
       
       
