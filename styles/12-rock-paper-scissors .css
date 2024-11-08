@@ -30,11 +30,12 @@ body{
     margin-top: 60px;
   }
 
-  .rest-score-button{
+  .rest-score-button,
+  .auto-play-button
+  {
     background-color: white;
     border: none;
     font-size: 15px;
     padding: 8px 15px;
     cursor: pointer;
   }
-  
