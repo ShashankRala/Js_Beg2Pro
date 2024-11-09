@@ -20,13 +20,23 @@ updateScoreElement();
   //     ties:0
   //   };
   // }
+
+    
   // by below code we made our projects to run automatically and giving the feature for on and off of AutoPlay mode with help of intervalId
 let isAutoPlaying=false;
 let intervalId;
+
+// const autoplay = () =>{
+// };
+  // comparing among these to regular function is recommanded for two reasons
+// 1.Easier to read
+// 2.it provides hosting features(which means we can even call the function 
+// above the function creation , it does not bother about order of code  )
+
   function autoplay(){
     if(!isAutoPlaying){
-       intervalId  =setInterval(function(){
-        const playerMove=pickComputerMove();
+       intervalId  =setInterval(()=>{
+        const playerMove=pickComputerMove();  
         playGame(playerMove);
       },1000)
       isAutoPlaying=true;

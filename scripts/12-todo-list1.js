@@ -15,7 +15,7 @@ function renderTodoList(){
   let todoListHTML = '';
 
 // below code will be switch to .forEach
-todoList.forEach(function(todoObject,index){
+todoList.forEach((todoObject,index)=>{
   // const todoObject= todoList[i];
   // const name = todoObject.name;
   // const dueDate = todoObject.dueDate;  by destructuring we wrote in below code

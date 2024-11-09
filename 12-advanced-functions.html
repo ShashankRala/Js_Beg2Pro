@@ -6,7 +6,31 @@
     <title>Advanced Functions</title>
 </head>
 <body>
+    <!-- onclick attribute is avoided when we are using addEventListener -->
+    <button onclick="" class="js-button">Click</button>
+
     <script>
+        const buttonElement =document.querySelector('.js-button')
+        
+
+        const eventListern=()=>{
+            console.log('click');
+        }
+        // the below code functions same as onclick() attribute
+        buttonElement.addEventListener('click',
+        eventListern);
+
+        // only click is removed click2 remains unchange
+        buttonElement.removeEventListener('click',
+        eventListern);
+
+            // advantages over onclick attributes 
+        // multiple event listeners for one event
+        buttonElement.addEventListener('click',()=>{
+            console.log('click2');
+        } );
+
+
         /*
         function greetings(){
             console.log("hello");
@@ -72,20 +96,58 @@ function dis(){
         }
         setInterval(log,1000);
             */
-           [
-            'make dinner',
-            'wash dishes',
-            'watch Youtube'
-           ].forEach(function(value,index){
-            /*Passing a function into another function*/
-            // console.log(value,index)
-            if(value === 'wash dishes'){
-                return;
-            }
-            console.log(index)
-            console.log(value)
+        
+        
+        //     [
+        //     'make dinner',
+        //     'wash dishes',
+        //     'watch Youtube'
+        //    ].forEach((value,index)=>{
+        //     /*Passing a function into another function*/
+        //     // console.log(value,index)
+        //     if(value === 'wash dishes'){
+        //         return;
+        //     }
+        //     console.log(index)
+        //     console.log(value)
            
-           });
+        //    });
+
+        //    const regularFunction = function(param,param2){
+        //     console.log('hello')
+        //     return 5;
+        //    };
+        //    regularFunction();
+
+        //    const arrowFunction = (param,param2) =>{
+        //     console.log('hello');
+        //     return 5;
+        //    };
+        //    arrowFunction();
+
+        // //    () are optional for parameters
+        //    const addone=param=>{
+        //     console.log(param+1)
+        //    }
+        //    addone(3);
+
+        // //    when we have only one line code in arrow function return and {} are optional
+        //    const singleline=()=> console.log(2+4);
+        // //    console.log(singleline());
+
+        // const obj={
+        //     method:()=>{
+
+        //     },
+        //     // objects already have a shortcut
+        //     // this below method is called Shorthand method syntax
+        //     // when function is written in object shorthand method 
+        //     // is recommand, which is easier to read
+        //     method(){
+
+        //     }
+        // }
+
         </script>
       
       
