@@ -33,22 +33,61 @@ let intervalId;
 // 2.it provides hosting features(which means we can even call the function 
 // above the function creation , it does not bother about order of code  )
 
-  function autoplay(){
-    if(!isAutoPlaying){
-       intervalId  =setInterval(()=>{
-        const playerMove=pickComputerMove();  
-        playGame(playerMove);
-      },1000)
-      isAutoPlaying=true;
-    }
-       
-    else{
-      clearInterval(intervalId);
-      isAutoPlaying=false;
-    }
-    
-  }
 
+// .addEventListener for autoplay button
+
+document.querySelector('.js-autoplay')
+  .addEventListener('click',()=>{
+    if(!isAutoPlaying){
+      intervalId  =setInterval(()=>{
+       const playerMove=pickComputerMove();  
+       playGame(playerMove);
+     },1000)
+     isAutoPlaying=true;
+   }
+      
+   else{
+     clearInterval(intervalId);
+     isAutoPlaying=false;
+   }
+  });
+
+  // function autoplay(){
+  //   if(!isAutoPlaying){
+  //      intervalId  =setInterval(()=>{
+  //       const playerMove=pickComputerMove();  
+  //       playGame(playerMove);
+  //     },1000)
+  //     isAutoPlaying=true;
+  //   }
+       
+  //   else{
+  //     clearInterval(intervalId);
+  //     isAutoPlaying=false;
+  //   }
+    
+  // }
+
+  document.querySelector('.js-rock-button')
+  .addEventListener('click',()=>
+  {
+    playGame('ROCK')
+  });
+
+  document.querySelector('.js-paper-button')
+  .addEventListener('click',()=>
+  {
+    playGame('PAPER')
+  });
+
+
+  document.querySelector('.js-scissors-button')
+  .addEventListener('click',()=>
+  {
+    playGame('SCISSORS')
+  });
+    // this may lead to return undefined
+    // playGame('ROCK'))
   function playGame(playerMove) {
     const computerMove = pickComputerMove();
     let result = "";

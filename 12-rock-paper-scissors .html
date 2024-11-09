@@ -13,27 +13,29 @@
     <h3 class="title">Rock Paper Scissors</h3>
 
     <!-- Rock -->
+    <!-- onclick=" playGame('ROCK');"  which we used prior in below button -->
     <button
-      onclick="
-      playGame('ROCK');
-    " class="move-button">
+       
+     class="move-button js-rock-button">
     <img src="/images/ROCK-emoji.png" class="move-icon">
     </button>
 
     <!-- Paper -->
-    <button
-      onclick="
+    <!-- onclick="
     // const computerMove = 
-    playGame('PAPER');"
-    class="move-button"
+    playGame('PAPER');" -->
+    <button
+      
+    class="move-button js-paper-button"
     ><img src="/images/PAPER-emoji.png" class="move-icon">
     </button>
 
     <!--  Scissors -->
+    <!-- onclick="
+    playGame('SCISSORS');" -->
     <button
-      onclick="
-    playGame('SCISSORS');"
-    class="move-button">
+    
+    class="move-button js-scissors-button">
     <img src="/images/SCISSORS-emoji.png" class="move-icon">
     </button>
 
@@ -53,8 +55,8 @@
     localStorage.removeItem('score');
     updateScoreElement();
     " class="rest-score-button"> Reset Score</button>
-
-    <button class="auto-play-button" onclick="autoplay()">Auto Play</button>
+                                               <!-- onclick="autoplay()" -->
+    <button class="auto-play-button  js-autoplay" >Auto Play</button>
     <script
      src="scripts/12-rock-paper-scissors.js">
     </script>
