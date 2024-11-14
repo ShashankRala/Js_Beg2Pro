@@ -88,6 +88,19 @@ document.querySelector('.js-autoplay')
   });
     // this may lead to return undefined
     // playGame('ROCK'))
+
+  document.body.addEventListener('keydown',(event)=>{
+    if(event.key === 'r'){
+      playGame('ROCK');
+    }
+    else if(event.key === 'p'){
+      playGame('PAPER');
+    }
+    else if(event.key === 's'){
+      playGame('SCISSORS');
+    }
+  });
+
   function playGame(playerMove) {
     const computerMove = pickComputerMove();
     let result = "";

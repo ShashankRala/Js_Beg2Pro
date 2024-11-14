@@ -33,6 +33,7 @@ todoList.forEach((todoObject,index)=>{
 todoList.splice(${index},1);
 renderTodoList();
 "class ="delete-todo-button
+js-delete-todo-button
 ">Delete</button>
   `;
   //thi is called Generating the HTML 
@@ -69,8 +70,12 @@ renderTodoList();
 
   document.querySelector('.js-todo-list').innerHTML=todoListHTML;
 
+    document.querySelectorAll('')
 }
 
+document.querySelector('.js-add-todo-button').addEventListener('click',()=>{
+  addTodo();
+})
 
 function addTodo() {
   const inputElement =  document.querySelector('.js-name-input');
