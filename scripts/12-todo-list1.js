@@ -74,6 +74,8 @@ js-delete-todo-button
     document.querySelectorAll('.js-delete-todo-button')
     .forEach((deleteButton,index)=>{
       deleteButton.addEventListener('click',()=>{
+        // it has a access of index value,even after this function executes which is called closure 
+       // console.log(index);
         todoList.splice(index, 1);
         renderTodoList();
       });
